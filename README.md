@@ -49,7 +49,7 @@ Run `ng generate component component-name --project we` to generate a new compon
 
 ## Build
 
-Run `ng build we` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build we-select` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
