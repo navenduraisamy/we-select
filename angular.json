@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/we-select",
       "sourceRoot": "projects/we-select/src",
-      "prefix": "lib",
+      "prefix": "we",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -43,7 +43,7 @@
       },
       "root": "projects/demo",
       "sourceRoot": "projects/demo/src",
-      "prefix": "app",
+      "prefix": "we",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
