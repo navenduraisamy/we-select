@@ -1,27 +1,57 @@
 # WeSelect
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
+## we-multi-col-select
+![sample usage for multi-col-select](images/image.png)
 
-## Development server
+### Usage
+- Add `WeModule` to the imports array in your module and you can start using the `we-multi-col-select`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+<we-multi-col-select 
+    [options]="options"
+    [containerWidth]="optionsContainerWidth"
+    [columns]="numberOfColumns"
+    [disabled]="isDisabled"
+    [selectedOption]="selectedOption"
+    (onSelectChange)="onOptionSelect($event)"
+>
+</we-multi-col-select>
+```
+
+### Inputs
+
+options.ts
+```
+export interface Option{
+    value: any;
+    displayText: string;
+}
+```
+
+optionsContainerWidth - The width of the optionsContainer in pixels. The default width is `500px`.
+
+columns - number of options to be displayed in each row. The entire width of the optionsCContainer is equally distributed among the columns. The default value is set to `1`.
+
+disabled - disabled takes a boolean value. The default value is set to `false`.
+
+selectedOption - It allows you to pass a `Option` which should be selected by default.
+
+### Outputs
+
+onSelectChange - onSelectChange output event is emitted when ever the selected option changes. It emits the value property from the selectedOption.
+
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name --project we` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project we`.
+> Note: Don't forget to add `--project we` or else it will be added to the default project in your `angular.json` file. 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build we` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Publishing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+After building your library with `ng build we`, go to the dist folder `cd dist/we` and run `npm publish`.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,5 +1,9 @@
-<we-multi-col-select
-[columns]="columns"
-[options]="options" 
+<we-multi-col-select 
+    [options]="options"
+    [containerWidth]="optionsContainerWidth"
+    [columns]="numberOfColumns"
+    [disabled]="isDisabled"
+    [selectedOption]="selectedOption"
+    (onSelectChange)="onOptionSelect($event)"
 >
 </we-multi-col-select>
