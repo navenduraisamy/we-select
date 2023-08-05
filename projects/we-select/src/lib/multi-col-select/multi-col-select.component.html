@@ -1,0 +1,17 @@
+<div class="selector-container">
+    <div class="selected d-flex d-flex-space-between" [ngClass]="disabled? 'disabled': ''" (click)="toggleDropdown()">
+        {{ selectedOption? selectedOption.displayText: 'Select an option'}}
+        <mat-icon>keyboard_arrow_down</mat-icon>
+    </div>
+    <ng-container *ngIf="options.length > 0; else defaultTemplate" >
+        <div class="options-container" #optionsContainer [ngClass]="isDropdownCollapsed? 'd-none': ''">
+            <div class="option"  *ngFor="let option of options" (click)="onSelect(option)" [highlight]="option.displayText === selectedOption?.displayText">{{ option['displayText'] }}</div>
+        </div>
+    </ng-container>
+
+    <ng-template #defaultTemplate>
+        <div class="default-template" [ngClass]="isDropdownCollapsed? 'd-none': ''">
+            No options to display.
+        </div>
+    </ng-template>
+</div>
