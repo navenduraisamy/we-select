@@ -5,7 +5,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 ![sample usage for multi-col-select](images/image.png)
 
 ### Usage
-- Add `WeModule` to the imports array in your module and you can start using the `we-multi-col-select`.
+- Add `WeSelectModule` to the imports array in your module and you can start using the `we-multi-col-select`.
 
 ```
 <we-multi-col-select 
@@ -31,7 +31,7 @@ export interface Option{
 
 optionsContainerWidth - The width of the optionsContainer in pixels. The default width is `500px`.
 
-columns - number of options to be displayed in each row. The entire width of the optionsCContainer is equally distributed among the columns. The default value is set to `1`.
+columns - number of options to be displayed in each row. The entire width of the optionsContainer is equally distributed among the columns. The default value is set to `1`.
 
 disabled - disabled takes a boolean value. The default value is set to `false`.
 
@@ -45,7 +45,7 @@ onSelectChange - onSelectChange output event is emitted when ever the selected o
 ## Code scaffolding
 
 Run `ng generate component component-name --project we` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project we`.
-> Note: Don't forget to add `--project we` or else it will be added to the default project in your `angular.json` file. 
+> Note: Don't forget to add `--project we-select` or else it will be added to the default project in your `angular.json` file. 
 
 ## Build
 
@@ -53,5 +53,5 @@ Run `ng build we` to build the project. The build artifacts will be stored in th
 
 ## Publishing
 
-After building your library with `ng build we`, go to the dist folder `cd dist/we` and run `npm publish`.
+After building your library with `ng build we-select`, go to the dist folder `cd dist/we-select` and run `npm publish`.
 
