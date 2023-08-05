@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo';
+
+  columns: number = 4;
+  options: {value: any, displayText: string}[] = [];
 }
