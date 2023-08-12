@@ -34,5 +34,5 @@ jobs:
         run: ng build we-select
         
       - name: run tests
-        run: ng test we-select -- --watch=false --browsers=ChromeHeadless
+        run: ng test we-select --watch=false --browsers=ChromeHeadless
     
