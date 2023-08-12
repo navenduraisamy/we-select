@@ -25,5 +25,5 @@ jobs:
       - name: clean install
         run: npm ci
       - name: run tests
-        run: npm test
+        run: npm test -- --watch=false --browsers=ChromeHeadless
     
