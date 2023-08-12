@@ -22,8 +22,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.version }}
-      - name: clean install
+      - name: install dependencies
         run: npm ci
+      - name: build we-select
+        run: ng build we-select
       - name: run tests
-        run: npm test -- --watch=false --browsers=ChromeHeadless
+        run: ng test we-select -- --watch=false --browsers=ChromeHeadless
     
