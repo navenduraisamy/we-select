@@ -55,3 +55,7 @@ Run `ng build we-select` to build the project. The build artifacts will be store
 
 After building your library with `ng build we-select`, go to the dist folder `cd dist/we-select` and run `npm publish`.
 
+## Contributions
+
+Pull requests are most welcome.
+
