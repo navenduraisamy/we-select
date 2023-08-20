@@ -1,13 +1,10 @@
 name: Continuous Integration
 
 on:
-  push:
-      branches:
-        main
   pull_request:
       branches:
-        main
-
+        - main
+        
 jobs:
   build-library:
     name: build library
