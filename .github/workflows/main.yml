@@ -3,9 +3,7 @@ name: Continuous Integration
 on:
   pull_request:
       branches:
-        main
-      paths:
-        - "!.github/**"
+        - main
         
 jobs:
   build-library:
