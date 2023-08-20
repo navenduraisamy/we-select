@@ -4,7 +4,9 @@ on:
   pull_request:
       branches:
         main
-
+      paths:
+        - "!.github/**"
+        
 jobs:
   build-library:
     name: build library
