@@ -1,0 +1,32 @@
+name: Publish Package to npmjs
+on:
+  workflow_dispatch:
+    inputs:
+      version_bump: 
+        type: choice
+        required: true
+        description: version to bump
+        options: 
+          - major
+          - minor
+          - patch
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      
+      - name: update version
+        run: npm version ${{ github.event.inputs.version_bump }}
+        
+      - name: publish to npm registry
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
