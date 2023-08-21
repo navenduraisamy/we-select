@@ -1,6 +1,6 @@
 {
   "name": "we-select",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0"
