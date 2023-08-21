@@ -44,7 +44,7 @@ onSelectChange - onSelectChange output event is emitted when ever the selected o
 
 ## Code scaffolding
 
-Run `ng generate component component-name --project we` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project we`.
+Run `ng generate component component-name --project we-select` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project we-select`.
 > Note: Don't forget to add `--project we-select` or else it will be added to the default project in your `angular.json` file. 
 
 ## Build
