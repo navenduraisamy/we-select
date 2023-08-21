@@ -20,11 +20,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-        
-      - name: change directory
-        run: |
-          cd ./projects/we-select
-          pwd
       
       - name: package version
         id: package-version
