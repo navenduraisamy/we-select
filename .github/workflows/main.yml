@@ -28,7 +28,9 @@ jobs:
       
       - name: package version
         id: package-version
-        run: echo "version=$(npm pkg get version)" >> $GITHUB_OUTPUT
+        run: |
+          npm pkg get version
+          echo "version=$(npm pkg get version)" >> $GITHUB_OUTPUT
 
       - name: install angular CLI
         run: npm install -g @angular/cli
