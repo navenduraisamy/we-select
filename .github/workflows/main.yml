@@ -29,10 +29,9 @@ jobs:
       - name: package version
         id: package-version
         run: |
-          npm pkg get version --location=local | tr -d \"
-          echo "version=$(npm pkg get version --location=local | tr -d \")" >> $GITHUB_OUTPUT
+          node -p "require('./package.json').version"
+          echo "version=$(node -p 'require(\"./package.json\").version')" >> $GITHUB_OUTPUT
         
-
       - name: install angular CLI
         run: npm install -g @angular/cli
         
