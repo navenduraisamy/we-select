@@ -23,8 +23,8 @@ jobs:
         
       - name: change directory
         run: |
-          pwd
           cd ./projects/we-select
+          pwd
       
       - name: package version
         id: package-version
