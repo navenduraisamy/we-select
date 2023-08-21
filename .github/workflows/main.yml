@@ -20,17 +20,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-        
-      - name: change directory
-        run: |
-          cd ./projects/we-select
-          pwd
       
       - name: package version
         id: package-version
-        run: echo "version=$(npm pkg get version --location=local | tr -d \")" >> $GITHUB_OUTPUT
+        run: |
+          cd ./projects/we-select
+          pwd
+          ls
+          npm pkg get version
+          echo "version=$(npm pkg get version | tr -d \")" >> $GITHUB_OUTPUT
+          
         
-
       - name: install angular CLI
         run: npm install -g @angular/cli
         
