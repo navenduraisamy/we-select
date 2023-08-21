@@ -62,7 +62,7 @@ jobs:
         run: echo "${{ needs.build_library.outputs.version }}"
 
       - name: create tags
-        run: git tag -a ${{ needs.build_library.outputs.version }}
+        run: git tag v${{ needs.build_library.outputs.version }}
 
       
       - name: Push tags to repository
