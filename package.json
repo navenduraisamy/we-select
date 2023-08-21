@@ -1,9 +1,8 @@
 {
   "name": "we-select",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "files": [
-    "dist/",              
-    "*.md"               
+    "dist/we-select"               
   ],
   "scripts": {
     "ng": "ng",
