@@ -44,10 +44,16 @@ jobs:
     needs: build_library
     runs-on: ubuntu-latest
     steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+        
       - name: git configuration
         run: |
           git config --global user.name "navenkumar"
           git config --global user.email "naven.duraisamy5859@gmail.com"
+
+      - name: print version output
+        run: echo "${{ needs.build_library.outputs.version }}"
 
       - name: create tags
         run: git tag -a ${{ needs.build_library.outputs.version }}
