@@ -22,7 +22,7 @@ jobs:
           node-version: 16
         
       - name: change directory
-        uses: cd .\projects\we-select
+        run: cd .\projects\we-select
       
       - name: package version
         id: package-version
