@@ -1,8 +1,9 @@
 {
   "name": "we-select",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "files": [
-    "dist/we-select"               
+    "dist/we-select",
+    "images/"
   ],
   "scripts": {
     "ng": "ng",
