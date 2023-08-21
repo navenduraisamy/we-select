@@ -23,12 +23,12 @@ jobs:
         
       - name: change directory
         run: |
-          pwd
           cd ./projects/we-select
+          pwd
       
       - name: package version
         id: package-version
-        run: echo "version=$(npm pkg get version | tr -d \")" >> $GITHUB_OUTPUT
+        run: echo "version=$(npm pkg get version --location=local | tr -d \")" >> $GITHUB_OUTPUT
         
 
       - name: install angular CLI

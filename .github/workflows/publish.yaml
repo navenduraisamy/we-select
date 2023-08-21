@@ -15,6 +15,9 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
+
+      - name: build library
+        run: npm run build we-select
         
       - name: publish to npm registry
         run: npm publish
