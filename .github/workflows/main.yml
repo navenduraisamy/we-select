@@ -10,7 +10,7 @@ jobs:
     name: build library
     runs-on: ubuntu-latest
     outputs: 
-      version: ${{ steps.package-version.version }}
+      version: $(npm pkg get version)
     
     steps:
       - name: checkout code
@@ -26,12 +26,11 @@ jobs:
           pwd
           cd ./projects/we-select
       
-      - name: package version
-        id: package-version
-        run: |
-          npm pkg get version
-          echo "version=$(npm pkg get version)" >> $GITHUB_OUTPUT
-          echo ${{ outputs.version }}
+      # - name: package version
+      #   id: package-version
+      #   run: |
+      #     npm pkg get version
+      #     echo "version=$(npm pkg get version)" >> $GITHUB_OUTPUT
 
       - name: install angular CLI
         run: npm install -g @angular/cli
