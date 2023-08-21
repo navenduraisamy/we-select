@@ -2,7 +2,7 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
 ## we-multi-col-select
-![sample usage for multi-col-select](images/image.png)
+![sample usage for multi-col-select](/images/image.png)
 
 ### Usage
 - Add `WeSelectModule` to the imports array in your module and you can start using the `we-multi-col-select`.
