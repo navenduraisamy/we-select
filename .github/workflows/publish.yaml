@@ -24,10 +24,9 @@ jobs:
       - name: build we-select
         run: ng build we-select
 
-      - name: change directory
-        run: cd ./dist/we-select/
-        
       - name: publish to npm registry
-        run: npm publish
+        run: |
+          cd ./dist/we-select/
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
