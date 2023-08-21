@@ -24,7 +24,7 @@ jobs:
       - name: change directory
         run: |
           pwd
-          cd ./projects\we-select
+          cd ./projects/we-select
       
       - name: package version
         id: package-version
