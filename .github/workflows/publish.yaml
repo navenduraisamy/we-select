@@ -14,10 +14,18 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
 
-      - name: build library
-        run: npm run build we-select
+      - name: install angular CLI
+        run: npm install -g @angular/cli
+          
+      - name: install dependencies
+        run: npm ci
+          
+      - name: build we-select
+        run: ng build we-select
+
+      - name: change directory
+        run: cd ./dist/we-select/
         
       - name: publish to npm registry
         run: npm publish
