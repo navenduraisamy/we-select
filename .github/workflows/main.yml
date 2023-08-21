@@ -6,12 +6,12 @@ on:
         - main
         
 jobs:
-  build-library:
+  build_library:
     name: build library
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        version: [16.x, 18.x]
+    outputs: 
+      version: ${{ steps.package-version.outputs.version}}
+    
     steps:
       - name: checkout code
         uses: actions/checkout@v3
@@ -19,7 +19,17 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.version }}
+          node-version: 16
+        
+      - name: change directory
+        run: |
+          pwd
+          cd ./projects/we-select
+      
+      - name: package version
+        id: package-version
+        run: echo "version=$(npm pkg get version | tr -d \")" >> $GITHUB_OUTPUT
+        
 
       - name: install angular CLI
         run: npm install -g @angular/cli
@@ -32,4 +42,31 @@ jobs:
         
       - name: run tests
         run: ng test we-select --watch=false --browsers=ChromeHeadless
+    
+    
+  
+  push_tags:
+    name: publish tags to github
+    needs: build_library
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+        
+      - name: git configuration
+        run: |
+          git config --global user.name "navenkumar"
+          git config --global user.email "naven.duraisamy5859@gmail.com"
+
+      - name: print version output
+        run: echo "${{ needs.build_library.outputs.version }}"
+
+      - name: create tags
+        run: git tag v${{ needs.build_library.outputs.version }}
+
+      
+      - name: Push tags to repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: git push origin --tags
     
